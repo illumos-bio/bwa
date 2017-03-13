@@ -1,3 +1,4 @@
+#include <alloca.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <limits.h>

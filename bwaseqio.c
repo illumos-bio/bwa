@@ -1,3 +1,4 @@
+#include <strings.h>
 #include <zlib.h>
 #include <ctype.h>
 #include "bwtaln.h"

@@ -306,7 +306,7 @@ void *kopen(const char *fn, int *_fd)
 					argv = cmd2argv(p + 1);
 					execvp(argv[0], argv);
 					free(argv[0]); free(argv);
-				} else execl("/bin/sh", "sh", "-c", p + 1, NULL);
+				} else execl("/bin/sh", "sh", "-c", p + 1, (void *)0);
 				exit(1);
 			} else { /* parent process */
 				close(pfd[1]);

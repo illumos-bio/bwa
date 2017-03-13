@@ -1,3 +1,4 @@
+OS :=		$(shell uname -s)
 CC=			gcc
 #CC=			clang --analyze
 CFLAGS=		-g -Wall -Wno-unused-function -O2
@@ -13,6 +14,10 @@ AOBJS=		bwashm.o bwase.o bwaseqio.o bwtgap.o bwtaln.o bamlite.o \
 PROG=		bwa
 INCLUDES=	
 LIBS=		-lm -lz -lpthread
+ifeq ($(OS),SunOS)
+	LIBS +=	-lsocket
+endif
+
 SUBDIRS=	.
 
 ifeq ($(shell uname -s),Linux)
